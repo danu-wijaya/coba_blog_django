@@ -1,6 +1,10 @@
-<h1>Hello</h1>
+{% extends 'base.html' %}
 
+
+
+{% block content %}
 <ul>
+    <h1>Posts</h1>
     {% for post in object_list %}
     <li>
         <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>- {{ post.author }} <br>
@@ -10,3 +14,4 @@
     
     {% endfor %}
 </ul>
+{% endblock  %}
