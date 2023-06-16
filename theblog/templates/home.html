@@ -3,15 +3,17 @@
 
 
 {% block content %}
+<div class="container py-4">
 <ul>
     <h1>Posts</h1>
     {% for post in object_list %}
     <li>
-        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>- {{ post.author }} <br>
+        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>- {{ post.author }} - <a href="{% url 'update_post' post.pk %}">Edit</a><br>
         {{ post.body }}
     </li>
     
     
     {% endfor %}
 </ul>
+</div>
 {% endblock  %}
