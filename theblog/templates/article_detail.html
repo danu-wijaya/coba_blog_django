@@ -7,6 +7,7 @@
 {% block content %}
 <div class='container'>
 <h1>{{ post.title }}</h1>
+<small>{{ post.post_date|date:"d/m/Y H:i" }} </small>
 <small>By: {{ post.author }}</small> <br>
 <hr>
 {{ post.body }}
@@ -15,6 +16,7 @@
 
 <a class="btn btn-secondary" href="{% url 'home' %} " role="button">Back</a>
 <a class="btn btn-secondary" href="{% url 'update_post' post.pk %}" role="button">Edit</a> 
+<a class="btn btn-secondary" href="{% url 'delete_post' post.pk %} " role="button">Delete</a>
 
 </div>
 {% endblock  %}

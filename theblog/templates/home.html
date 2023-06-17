@@ -6,14 +6,14 @@
 <div class="container py-4">
 <ul>
     <h1>Posts</h1>
+
     {% for post in object_list %}
     <li>
-        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>- {{ post.author }} - <a href="{% url 'update_post' post.pk %}">Edit</a><br>
+        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>- {{ post.author }} - {{ post.post_date|date:"d/m/Y H:i" }} - <a href="{% url 'update_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a><br>
         {{ post.body }}
-    </li>
-    
-    
+    </li> 
     {% endfor %}
+
 </ul>
 </div>
 {% endblock  %}
